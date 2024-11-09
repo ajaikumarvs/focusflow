@@ -5,7 +5,7 @@
 - **Focus Monitoring**: Track user focus through a combination of eye tracking and activity monitoring.
 - **Eye Tracking**: Use computer vision to detect eye movements and blink patterns.
 - **Sleep/Drowsiness Detection**: Detect when the user is becoming drowsy or falls asleep using facial recognition and eye tracking.
-- **Media Playback Control**: Automatically pause, play, or skip media based on the user's focus level or activity.
+- **Media Playback Control**: Automatically pause, play, or skip media based on the user's activity.
 
 ### Installation
 
