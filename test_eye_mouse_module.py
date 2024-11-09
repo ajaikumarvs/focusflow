@@ -5,12 +5,7 @@ import time
 import numpy as np
 import cv2
 
-# Mock the DISPLAY environment variable before importing pyautogui
-@patch.dict('os.environ', {'DISPLAY': ':0'})  # Mock DISPLAY environment variable
-import pyautogui  # Now it is safe to import pyautogui
-import mediapipe as mp
-
-# Importing functions from the script (assumed to be in focusflow.py or similar)
+# Import functions from the actual code
 from focusflow import (
     init_camera,
     init_face_mesh,
