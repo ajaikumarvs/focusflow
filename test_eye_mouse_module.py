@@ -100,7 +100,7 @@ def test_process_frame(mock_click):
 
     # Run the frame processing
     result_frame, last_left_blink_time, last_right_blink_time = process_frame(cam, face_mesh, blink_threshold=3.5, blink_cooldown=1)
-
+    
     # Check that the function completes successfully and that no errors are thrown
     assert result_frame is not None, "Processed frame should not be None"
     assert isinstance(result_frame, np.ndarray), "Processed frame should be a numpy array"
