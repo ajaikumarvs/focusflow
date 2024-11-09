@@ -1,5 +1,4 @@
-numpy
-setuptools
 opencv-python
 mediapipe
 pyautogui
+numpy
