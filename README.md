@@ -23,13 +23,16 @@
 
 ## Usage
 
-   Run corresponding modules using
-   python "modulename".py
+To run the corresponding module, use the following command:
+
+```bash
+python <modulename>.py
 
 ## Contributors
 
-- **@ajaikumarvs** – Lead Developer, Backend, Testing, Documentation
-- **@swathisrees** – UI/UX Design, Additional Features 
+- **[ajaikumarvs](https://github.com/ajaikumarvs)** – Lead Developer, Backend, Testing, Documentation
+- **[swathisrees](https://github.com/swathisrees)** – UI/UX Design, Additional Features
+
 
 
 
