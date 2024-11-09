@@ -1,10 +1,14 @@
-import time
 import pytest
+import os
 from unittest.mock import MagicMock, patch
+import time
+import numpy as np
 import cv2
+
+# Mock the DISPLAY environment variable before importing pyautogui
+@patch.dict('os.environ', {'DISPLAY': ':0'})  # Mock DISPLAY environment variable
 import pyautogui
 import mediapipe as mp
-import numpy as np
 
 # Importing functions from the script (assumed to be in focusflow.py or similar)
 from focusflow import (
@@ -78,7 +82,7 @@ def test_detect_blink(mock_click):
 
 # Test the main frame processing logic (mocking GUI and camera)
 @patch('pyautogui.click')  # Mock pyautogui.click to prevent actual clicks
-@patch.dict('os.environ', {'DISPLAY': ':0'})  # Mock DISPLAY environment variable
+@patch.dict('os.environ', {'DISPLAY': ':0'})  # Mock DISPLAY environment variable again
 def test_process_frame(mock_click):
     # Mock camera and face_mesh
     cam = MagicMock()
