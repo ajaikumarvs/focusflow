@@ -30,7 +30,7 @@ python <modulename>.py
 ### Contributors
 
 - **[ajaikumarvs](https://github.com/ajaikumarvs)** – Lead Developer, Backend, Testing, Documentation
-- **[swathisrees](https://github.com/swathisrees)** – UI/UX Design, Development, Additional Features,
+- **[swathisrees](https://github.com/swathisrees)** – UI/UX Design, Development, Additional Features
 
 
 
