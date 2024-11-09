@@ -1,6 +1,6 @@
 import time
 import pytest
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, patch
 import cv2
 import pyautogui
 import mediapipe as mp
@@ -51,7 +51,8 @@ def test_calculate_distance():
     assert np.isclose(distance, expected_distance, atol=1e-2), f"Expected distance {expected_distance}, but got {distance}"
 
 # Test the blink detection function (mocking pyautogui.click)
-def test_detect_blink():
+@patch('pyautogui.click')  # Mock pyautogui.click to prevent actual clicks
+def test_detect_blink(mock_click):
     # Create mock landmarks (just mock x, y values for eyes)
     class Landmark:
         def __init__(self, x, y):
@@ -66,20 +67,19 @@ def test_detect_blink():
     last_left_blink_time = 0
     last_right_blink_time = 0
 
-    # Mock pyautogui.click
-    pyautogui.click = MagicMock()
-
     # Run the blink detection
     last_left_blink_time, last_right_blink_time = detect_blink(
         landmarks, frame_w, frame_h, current_time, blink_threshold, blink_cooldown, last_left_blink_time, last_right_blink_time
     )
 
     # Check that the click function was called
-    pyautogui.click.assert_called_with(button='left')  # Ensure left click was called
+    mock_click.assert_called_with(button='left')  # Ensure left click was called
     assert last_left_blink_time != 0, "Last left blink time should have been updated"
 
-# Test the main frame processing logic
-def test_process_frame():
+# Test the main frame processing logic (mocking GUI and camera)
+@patch('pyautogui.click')  # Mock pyautogui.click to prevent actual clicks
+@patch.dict('os.environ', {'DISPLAY': ':0'})  # Mock DISPLAY environment variable
+def test_process_frame(mock_click):
     # Mock camera and face_mesh
     cam = MagicMock()
     face_mesh = MagicMock()
@@ -102,4 +102,3 @@ def test_process_frame():
     assert isinstance(result_frame, np.ndarray), "Processed frame should be a numpy array"
     assert last_left_blink_time == 0, "Left blink time should have been initialized"
     assert last_right_blink_time == 0, "Right blink time should have been initialized"
-
