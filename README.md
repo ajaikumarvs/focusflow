@@ -1,5 +1,3 @@
-# FocusFlow: Focus Monitoring, Eye Tracking, Sleep/Drowsiness Detection, and Media Playback Control
-
 **FocusFlow** is a Python-based tool designed to help you monitor your focus levels, track eye movement, detect sleep or drowsiness, and control media playback. It's built to help improve productivity and well-being by providing real-time feedback on focus and alertness while offering media playback control features.
 
 ## Features
@@ -27,6 +25,7 @@ To run the corresponding module, use the following command:
 
 ```bash
 python <modulename>.py
+```
 
 ## Contributors
 
