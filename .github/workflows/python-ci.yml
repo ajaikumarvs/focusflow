@@ -36,4 +36,4 @@ jobs:
     # Run the tests
     - name: Run tests
       run: |
-        pytest test_eye_mouse_module.py  # Adjust the test file name if necessary
+        pytest test_eye_mouse_module.py 
